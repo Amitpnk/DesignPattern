@@ -3,7 +3,8 @@
 //using FactoryDesignPattern;
 //using DecoratorDesignPattern;
 //using PrototypeDesignPattern;
-using AggregateRootDesignPattern;
+//using AggregateRootDesignPattern;
+using IteratorDesignPattern;
 using System;
 
 namespace ConsoleApp
@@ -80,12 +81,36 @@ namespace ConsoleApp
             //#endregion
 
 
-            #region Aggregate root design pattern
+            //#region Aggregate root design pattern
+
+            //Customer customer = new Customer();
+
+            //customer.Add(new Address { Type = 1 });
+            //customer.Add(new Address { Type = 1 });
+
+            //#endregion
+
+
+            #region Iterator design pattern
 
             Customer customer = new Customer();
 
             customer.Add(new Address { Type = 1 });
-            customer.Add(new Address { Type = 1 });
+            customer.Add(new Address { Type = 2 });
+
+            // we can avoid manipulating methods like below in Iterator design pattern
+            //customer.addresses.Add(new Address { Type = 3 });
+
+
+
+            foreach (var item in customer.GetAddresses())
+            {
+                Console.WriteLine($"customer address type  : {item.Type}");
+            }
+
+
+            //var x = customer.GetEnumerator();
+
 
             #endregion
 
