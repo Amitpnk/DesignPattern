@@ -8,6 +8,7 @@ namespace PrototypeDesignPattern
         public string Department { get; set; }
         public Employee GetClone()
         {
+            // Memberwise clone creates a fresh object rather than point BYREF
             return (Employee)this.MemberwiseClone();
         }
     }

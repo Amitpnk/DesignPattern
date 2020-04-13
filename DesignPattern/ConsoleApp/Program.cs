@@ -3,6 +3,7 @@
 //using FactoryDesignPattern;
 //using DecoratorDesignPattern;
 //using PrototypeDesignPattern;
+using MementoDesignPattern;
 //using AggregateRootDesignPattern;
 using IteratorDesignPattern;
 using System;
@@ -81,6 +82,28 @@ namespace ConsoleApp
             //#endregion
 
 
+            //#region Memento Design Pattern
+
+            Employee emp1 = new Employee();
+            emp1.Name = "Amit Naik";
+            emp1.Department = "IT";
+            Employee emp2 = emp1.GetClone();
+            emp2.Name = "Shwetha";
+
+
+
+            Console.WriteLine("Emplpyee 1: ");
+            Console.WriteLine("Name: " + emp1.Name + ", Department: " + emp1.Department);
+            //Console.WriteLine("Emplpyee 2: ");
+            //Console.WriteLine("Name: " + emp2.Name + ", Department: " + emp2.Department);
+
+            Employee emp3 = emp1.Revert();
+            Console.WriteLine("Reverting ");
+            Console.WriteLine("Name: " + emp3.Name + ", Department: " + emp3.Department);
+
+            //#endregion
+
+
             //#region Aggregate root design pattern
 
             //Customer customer = new Customer();
@@ -91,33 +114,33 @@ namespace ConsoleApp
             //#endregion
 
 
-            #region Iterator design pattern
+            //#region Iterator design pattern
 
-            Customer customer = new Customer();
+            //Customer customer = new Customer();
 
-            customer.Add(new Address { Type = 1 });
-            customer.Add(new Address { Type = 2 });
+            //customer.Add(new Address { Type = 1 });
+            //customer.Add(new Address { Type = 2 });
 
-            // we can avoid manipulating methods like below in Iterator design pattern
-            //customer.addresses.Add(new Address { Type = 3 });
-
-
-            // Implementing via Ienumerable 
-            foreach (var item in customer.GetAddresses())
-            {
-                Console.WriteLine($"customer address type  : {item.Type}");
-            }
-            
-            // Implementing via IEnumerator
-            foreach (var item in customer)
-            {
-                Console.WriteLine($"customer address type  : {item.Type}");
-
-            }
-            //var x = customer.GetEnumerator();
+            //// we can avoid manipulating methods like below in Iterator design pattern
+            ////customer.addresses.Add(new Address { Type = 3 });
 
 
-            #endregion
+            //// Implementing via Ienumerable 
+            //foreach (var item in customer.GetAddresses())
+            //{
+            //    Console.WriteLine($"customer address type  : {item.Type}");
+            //}
+
+            //// Implementing via IEnumerator
+            //foreach (var item in customer)
+            //{
+            //    Console.WriteLine($"customer address type  : {item.Type}");
+
+            //}
+            ////var x = customer.GetEnumerator();
+
+
+            //#endregion
 
         }
 

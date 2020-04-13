@@ -17,7 +17,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PrototypeDesignPattern", "P
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IteratorDesignPattern", "IteratorDesignPattern\IteratorDesignPattern.csproj", "{8B9E0C84-2F96-414D-A739-90518F108692}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AggregateRootDesignPattern", "AggregateRootDesignPattern\AggregateRootDesignPattern.csproj", "{2F572FA5-EBCA-4713-8632-4360070392AC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AggregateRootDesignPattern", "AggregateRootDesignPattern\AggregateRootDesignPattern.csproj", "{2F572FA5-EBCA-4713-8632-4360070392AC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MementoDesignPattern", "MementoDesignPattern\MementoDesignPattern.csproj", "{56F894D6-2BA0-41CB-A15C-8449CD63940B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +59,10 @@ Global
 		{2F572FA5-EBCA-4713-8632-4360070392AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2F572FA5-EBCA-4713-8632-4360070392AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2F572FA5-EBCA-4713-8632-4360070392AC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56F894D6-2BA0-41CB-A15C-8449CD63940B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56F894D6-2BA0-41CB-A15C-8449CD63940B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56F894D6-2BA0-41CB-A15C-8449CD63940B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56F894D6-2BA0-41CB-A15C-8449CD63940B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

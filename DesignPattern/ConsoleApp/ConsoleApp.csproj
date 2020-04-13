@@ -12,6 +12,7 @@
     <ProjectReference Include="..\DecoratorDesignPattern\DecoratorDesignPattern.csproj" />
     <ProjectReference Include="..\FactoryDesignPattern\FactoryDesignPattern.csproj" />
     <ProjectReference Include="..\IteratorDesignPattern\IteratorDesignPattern.csproj" />
+    <ProjectReference Include="..\MementoDesignPattern\MementoDesignPattern.csproj" />
     <ProjectReference Include="..\PrototypeDesignPattern\PrototypeDesignPattern.csproj" />
   </ItemGroup>
 
