@@ -12,6 +12,22 @@ Design patterns are documented tried and tested solutions for recurring problems
 - Structural
 - Behavioral 
 
+According to GOF design pattern
+
+| Creational  | Strucural  | Behavioral | 
+| ------------- | ------------- | ------------- |
+| Abstract Factory  | [Adapter](Adapter)  | Chain of Resposibility | 
+| [Builder](Builder) | Bridge  | Command |
+| [Factory](Factory) | Composite  | Interpreter |
+| [Prototype](Prototype) | [Decorator](Decorator)  | [Iterator](Iterator) |
+| [Singleton](Singleton) | Facade  | [Mediator](Mediator) |
+| - | Flyweight  | [Memento](Memento) |
+| - | Proxy  | Observer |
+| - | -  | State |
+| - | -  | Strategy |
+| - | -  | [Template method](Templatemethod) |
+| - | -  | Visitor |
+
 ## Table of Contents
 
 - [Sending Feedback](#sending-feedback)
