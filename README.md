@@ -8,10 +8,6 @@ Design patterns are documented tried and tested solutions for recurring problems
 
 ## Which are the three main categories of design patterns?
 
-- Creational
-- Structural
-- Behavioral 
-
 According to GOF design pattern
 
 | Creational  | Strucural  | Behavioral | 
@@ -27,6 +23,10 @@ According to GOF design pattern
 | - | -  | Strategy |
 | - | -  | [Template method](Templatemethod) |
 | - | -  | Visitor |
+
+There some more design pattern which is widely used in real time project
+* Repository design pattern
+* xxx
 
 ## Table of Contents
 
