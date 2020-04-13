@@ -19,17 +19,15 @@ namespace IteratorDesignPattern
             // Tolist to create new reference type
             return addresses.ToList<Address>();
         }
-      
-        //public IEnumerator<Address> GetEnumerator()
-        //{
-        //    foreach (var val in addresses)
-        //    {
-        //        Console.WriteLine($"customer address type  : {val.Type}");
-        //        yield return val;
-        //    }
-        //    yield return default(Address);
-        //    //return default(Address);
-        //}
+
+        public IEnumerator<Address> GetEnumerator()
+        {
+            foreach (var val in addresses)
+            {
+                //Console.WriteLine($"customer address type  : {val.Type}");
+                yield return val;
+            }
+        }
 
 
         // Any references from outside the aggregate should only go to the aggreate root

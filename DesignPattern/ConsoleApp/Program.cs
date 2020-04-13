@@ -102,13 +102,18 @@ namespace ConsoleApp
             //customer.addresses.Add(new Address { Type = 3 });
 
 
-
+            // Implementing via Ienumerable 
             foreach (var item in customer.GetAddresses())
             {
                 Console.WriteLine($"customer address type  : {item.Type}");
             }
+            
+            // Implementing via IEnumerator
+            foreach (var item in customer)
+            {
+                Console.WriteLine($"customer address type  : {item.Type}");
 
-
+            }
             //var x = customer.GetEnumerator();
 
 
