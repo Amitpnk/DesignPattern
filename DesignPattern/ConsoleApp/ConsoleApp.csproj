@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AdapterDesignPattern\AdapterDesignPattern.csproj" />
+    <ProjectReference Include="..\AggregateRootDesignPattern\AggregateRootDesignPattern.csproj" />
+    <ProjectReference Include="..\BuilderDesignPattern\BuilderDesignPattern.csproj" />
+    <ProjectReference Include="..\DecoratorDesignPattern\DecoratorDesignPattern.csproj" />
+    <ProjectReference Include="..\FactoryDesignPattern\FactoryDesignPattern.csproj" />
+    <ProjectReference Include="..\PrototypeDesignPattern\PrototypeDesignPattern.csproj" />
+  </ItemGroup>
+
+</Project>
