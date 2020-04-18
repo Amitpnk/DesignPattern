@@ -148,19 +148,22 @@ namespace ConsoleApp
 
             ConsoleColorMethod("Repository design pattern");
 
+            // repository design pattern (customer class)
             //IRepoContext<CustomerRepository> repoContext = new DAL<CustomerRepository>();
             //repoContext.Add(new CustomerRepository());
             //repoContext.Save();
 
+            // repository design pattern (supplier class)
             //IRepoContext<SupplierRepository> repoContext1 = new DAL<SupplierRepository>();
             //repoContext1.Add(new SupplierRepository());
             //repoContext1.Save();
 
+            // repository design pattern with template design pattern
             //IRepoContext<CustomerRepository> repoContext = new DALCustomerRepo();
             //repoContext.Add(new CustomerRepository());
             //repoContext.Save();
 
-
+            // repository design pattern with factory and template design pattern
             IRepoContext<CustomerRepository> repoContext = FactoryRepository<CustomerRepository>.Create();
             repoContext.Add(new CustomerRepository());
             repoContext.Save();
