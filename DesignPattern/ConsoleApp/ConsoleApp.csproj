@@ -14,6 +14,7 @@
     <ProjectReference Include="..\IteratorDesignPattern\IteratorDesignPattern.csproj" />
     <ProjectReference Include="..\MementoDesignPattern\MementoDesignPattern.csproj" />
     <ProjectReference Include="..\PrototypeDesignPattern\PrototypeDesignPattern.csproj" />
+    <ProjectReference Include="..\RepositoryDesignPattern\RepositoryDesignPattern.csproj" />
   </ItemGroup>
 
 </Project>

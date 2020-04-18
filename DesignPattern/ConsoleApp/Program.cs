@@ -3,10 +3,11 @@
 //using FactoryDesignPattern;
 //using DecoratorDesignPattern;
 //using PrototypeDesignPattern;
-using MementoDesignPattern;
+//using MementoDesignPattern;
 //using AggregateRootDesignPattern;
-using IteratorDesignPattern;
+//using IteratorDesignPattern;
 using System;
+using RepositoryDesignPattern;
 
 namespace ConsoleApp
 {
@@ -84,22 +85,22 @@ namespace ConsoleApp
 
             //#region Memento Design Pattern
 
-            Employee emp1 = new Employee();
-            emp1.Name = "Amit Naik";
-            emp1.Department = "IT";
-            Employee emp2 = emp1.GetClone();
-            emp2.Name = "Shwetha";
+            //Employee emp1 = new Employee();
+            //emp1.Name = "Amit Naik";
+            //emp1.Department = "IT";
+            //Employee emp2 = emp1.GetClone();
+            //emp2.Name = "Shwetha";
 
 
 
-            Console.WriteLine("Emplpyee 1: ");
-            Console.WriteLine("Name: " + emp1.Name + ", Department: " + emp1.Department);
-            //Console.WriteLine("Emplpyee 2: ");
-            //Console.WriteLine("Name: " + emp2.Name + ", Department: " + emp2.Department);
+            //Console.WriteLine("Emplpyee 1: ");
+            //Console.WriteLine("Name: " + emp1.Name + ", Department: " + emp1.Department);
+            ////Console.WriteLine("Emplpyee 2: ");
+            ////Console.WriteLine("Name: " + emp2.Name + ", Department: " + emp2.Department);
 
-            Employee emp3 = emp1.Revert();
-            Console.WriteLine("Reverting ");
-            Console.WriteLine("Name: " + emp3.Name + ", Department: " + emp3.Department);
+            //Employee emp3 = emp1.Revert();
+            //Console.WriteLine("Reverting ");
+            //Console.WriteLine("Name: " + emp3.Name + ", Department: " + emp3.Department);
 
             //#endregion
 
@@ -141,6 +142,30 @@ namespace ConsoleApp
 
 
             //#endregion
+
+
+            #region Repository Design Pattern
+
+            ConsoleColorMethod("Repository design pattern");
+
+            //IRepoContext<CustomerRepository> repoContext = new DAL<CustomerRepository>();
+            //repoContext.Add(new CustomerRepository());
+            //repoContext.Save();
+
+            //IRepoContext<SupplierRepository> repoContext1 = new DAL<SupplierRepository>();
+            //repoContext1.Add(new SupplierRepository());
+            //repoContext1.Save();
+
+            //IRepoContext<CustomerRepository> repoContext = new DALCustomerRepo();
+            //repoContext.Add(new CustomerRepository());
+            //repoContext.Save();
+
+
+            IRepoContext<CustomerRepository> repoContext = FactoryRepository<CustomerRepository>.Create();
+            repoContext.Add(new CustomerRepository());
+            repoContext.Save();
+
+            #endregion
 
         }
 
