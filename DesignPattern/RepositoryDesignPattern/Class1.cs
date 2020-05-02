@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
-namespace DesignPattern
+namespace RepositoryDesignPattern
 {
-
     public interface IRepoContext<T> where T : class
     {
         bool Add(T obj); // in memory
@@ -23,28 +21,28 @@ namespace DesignPattern
         public string SupplierCode { get; set; }
     }
 
-    public class DAL<T> : IRepoContext<T> where T : class
-    {
-        List<T> listObj = new List<T>();
+    //public class DAL<T> : IRepoContext<T> where T : class
+    //{
+    //    List<T> listObj = new List<T>();
 
-        // In memory
-        public bool Add(T obj)
-        {
-            //var x = obj is CustomerRepository;
-
-
-            Console.WriteLine($"Add {obj.GetType().Name} to DB");
-            this.listObj.Add(obj);
-            return true;
-        }
+    //    // In memory
+    //    public bool Add(T obj)
+    //    {
+    //        //var x = obj is CustomerRepository;
 
 
+    //        Console.WriteLine($"Add {obj.GetType().Name} to DB");
+    //        this.listObj.Add(obj);
+    //        return true;
+    //    }
 
-        public void Save()
-        {
-            Console.WriteLine($"Save changes to DB");
-        }
-    }
+
+
+    //    public void Save()
+    //    {
+    //        Console.WriteLine($"Save changes to DB");
+    //    }
+    //}
 
 
     public abstract class TemplateDAL<T> : IRepoContext<T> where T : class
@@ -89,4 +87,5 @@ namespace DesignPattern
             return (IRepoContext<T>)new DALCustomerRepo();
         }
     }
+    
 }

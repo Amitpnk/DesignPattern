@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace TemplateDesignPattern
 {
@@ -18,12 +16,12 @@ namespace TemplateDesignPattern
 
         private void GroupDiscussion()
         {
-            Console.WriteLine("Conduct group discussion" );
+            Console.WriteLine("Conduct group discussion");
         }
         public abstract void TechnicalInterview();
         private void HR_Interview()
         {
-            Console.WriteLine("Conduct HR Interviews" );
+            Console.WriteLine("Conduct HR Interviews");
         }
 
     }
@@ -32,12 +30,12 @@ namespace TemplateDesignPattern
     {
         public override void FirstRoundTest()
         {
-            Console.WriteLine("Conduct CS First round test" );
+            Console.WriteLine("Conduct CS First round test");
         }
 
         public override void TechnicalInterview()
         {
-            Console.WriteLine("Conduct CS Technical round test" );
+            Console.WriteLine("Conduct CS Technical round test");
         }
     }
 
@@ -46,14 +44,12 @@ namespace TemplateDesignPattern
     {
         public override void FirstRoundTest()
         {
-            Console.WriteLine("Conduct EEE First round test" );
+            Console.WriteLine("Conduct EEE First round test");
         }
 
         public override void TechnicalInterview()
         {
-            Console.WriteLine("Conduct EEE Technical round test" );
+            Console.WriteLine("Conduct EEE Technical round test");
         }
     }
-
-
 }

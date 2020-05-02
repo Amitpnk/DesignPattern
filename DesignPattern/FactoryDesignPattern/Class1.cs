@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace DesignPattern
+namespace FactoryDesignPattern
 {
-
 
     public enum ObjectType
     {
@@ -12,7 +9,7 @@ namespace DesignPattern
         Supplier
     }
 
-    class CreateFactory
+   public class CreateFactory
     {
         public static IFactory GetObject(ObjectType type)
         {
@@ -30,30 +27,30 @@ namespace DesignPattern
 
                 default:
                     throw new NotSupportedException();
-                    
+
             }
 
             return factory;
         }
     }
 
-    interface IFactory
+    public interface IFactory
     {
         string getName();
     }
 
-    class CustomerFactory : IFactory
+    public class CustomerFactory : IFactory
     {
-       
+
         public string getName()
         {
             return "Customer name";
         }
     }
 
-    class SupplierFactory : IFactory
+    public class SupplierFactory : IFactory
     {
-       
+
 
         public string getName()
         {
