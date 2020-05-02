@@ -6,8 +6,10 @@
 //using MementoDesignPattern;
 //using AggregateRootDesignPattern;
 //using IteratorDesignPattern;
-using System;
 using RepositoryDesignPattern;
+using SingletonDesignPattern;
+using System;
+using TemplateDesignPattern;
 
 namespace ConsoleApp
 {
@@ -146,7 +148,10 @@ namespace ConsoleApp
 
             #region Repository Design Pattern
 
+
             ConsoleColorMethod("Repository design pattern");
+
+
 
             // repository design pattern (customer class)
             //IRepoContext<CustomerRepository> repoContext = new DAL<CustomerRepository>();
@@ -167,6 +172,40 @@ namespace ConsoleApp
             IRepoContext<CustomerRepository> repoContext = FactoryRepository<CustomerRepository>.Create();
             repoContext.Add(new CustomerRepository());
             repoContext.Save();
+
+            #endregion
+
+
+            #region Template design pattern
+            ConsoleColorMethod("Template design pattern");
+
+            TemplateHiringProcess hiringProcess = new CSDepartment();
+
+            Console.WriteLine("*** Hiring CS students");
+            hiringProcess.HireFreshers();
+
+            Console.WriteLine(Environment.NewLine);
+
+            hiringProcess = new EEEDepartment();
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("*** Hiring EEE students");
+            hiringProcess.HireFreshers();
+
+            #endregion
+
+            #region Singleton Design Pattern
+            ConsoleColorMethod("Singleton design pattern");
+
+            Singleton s1 = Singleton.getInstance();
+            Singleton s2 = Singleton.getInstance();
+
+            s1.myMethod();
+
+            // Test for same instance
+            //if (s1 == s2)
+            //{
+            //    Console.WriteLine("Objects are the same instance");
+            //}
 
             #endregion
 
