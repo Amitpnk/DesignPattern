@@ -23,9 +23,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MementoDesignPattern", "Mem
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RepositoryDesignPattern", "RepositoryDesignPattern\RepositoryDesignPattern.csproj", "{24B4C0C3-E366-46D0-B6AB-394356BEAD80}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SingletonDesignPattern", "SingletonDesignPattern\SingletonDesignPattern.csproj", "{098132FD-7305-4BE3-B135-1ABD517A30EB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SingletonDesignPattern", "SingletonDesignPattern\SingletonDesignPattern.csproj", "{098132FD-7305-4BE3-B135-1ABD517A30EB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TemplateDesignPattern", "TemplateDesignPattern\TemplateDesignPattern.csproj", "{661BC7B9-F97A-404E-BEEE-9CFFF23E881F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TemplateDesignPattern", "TemplateDesignPattern\TemplateDesignPattern.csproj", "{661BC7B9-F97A-404E-BEEE-9CFFF23E881F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReplaceIfPolymorphismDesignPattern", "ReplaceIfPolymorphismDesignPattern\ReplaceIfPolymorphismDesignPattern.csproj", "{D453469F-E1F4-444E-9112-864847B46BE1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -81,6 +83,10 @@ Global
 		{661BC7B9-F97A-404E-BEEE-9CFFF23E881F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{661BC7B9-F97A-404E-BEEE-9CFFF23E881F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{661BC7B9-F97A-404E-BEEE-9CFFF23E881F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D453469F-E1F4-444E-9112-864847B46BE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D453469F-E1F4-444E-9112-864847B46BE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D453469F-E1F4-444E-9112-864847B46BE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D453469F-E1F4-444E-9112-864847B46BE1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -6,6 +6,7 @@
 //using MementoDesignPattern;
 //using AggregateRootDesignPattern;
 //using IteratorDesignPattern;
+using ReplaceIfPolymorphismDesignPattern;
 using RepositoryDesignPattern;
 using SingletonDesignPattern;
 using System;
@@ -207,6 +208,16 @@ namespace ConsoleApp
             //    Console.WriteLine("Objects are the same instance");
             //}
 
+            #endregion
+
+            #region Replace IF with Polyphormism
+
+            Console.WriteLine("Enter your skill set for job opening (like JavaScript,c#,Net)");
+
+            //string knowledge = Console.ReadLine();
+            string knowledge = "javascript";
+
+            Console.WriteLine(SimpleFactoryRIP.Create(knowledge.ToLower()));
             #endregion
 
         }
