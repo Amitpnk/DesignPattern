@@ -6,6 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\AbstractFactory\AbstractFactoryDesignPattern.csproj" />
     <ProjectReference Include="..\AdapterDesignPattern\AdapterDesignPattern.csproj" />
     <ProjectReference Include="..\AggregateRootDesignPattern\AggregateRootDesignPattern.csproj" />
     <ProjectReference Include="..\BuilderDesignPattern\BuilderDesignPattern.csproj" />

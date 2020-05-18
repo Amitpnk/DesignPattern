@@ -29,7 +29,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TemplateDesignPattern", "Te
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReplaceIfPolymorphismDesignPattern", "ReplaceIfPolymorphismDesignPattern\ReplaceIfPolymorphismDesignPattern.csproj", "{D453469F-E1F4-444E-9112-864847B46BE1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanCode", "CleanCode\CleanCode.csproj", "{29ABFDE5-0125-4A45-A355-48F32262B497}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanCode", "CleanCode\CleanCode.csproj", "{29ABFDE5-0125-4A45-A355-48F32262B497}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AbstractFactoryDesignPattern", "AbstractFactory\AbstractFactoryDesignPattern.csproj", "{832727C2-2BBB-448A-8C5C-34C53E656070}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -93,6 +95,10 @@ Global
 		{29ABFDE5-0125-4A45-A355-48F32262B497}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{29ABFDE5-0125-4A45-A355-48F32262B497}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{29ABFDE5-0125-4A45-A355-48F32262B497}.Release|Any CPU.Build.0 = Release|Any CPU
+		{832727C2-2BBB-448A-8C5C-34C53E656070}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{832727C2-2BBB-448A-8C5C-34C53E656070}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{832727C2-2BBB-448A-8C5C-34C53E656070}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{832727C2-2BBB-448A-8C5C-34C53E656070}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

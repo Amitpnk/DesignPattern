@@ -6,6 +6,7 @@
 //using MementoDesignPattern;
 //using AggregateRootDesignPattern;
 //using IteratorDesignPattern;
+using AbstractFactoryDesignPattern;
 using ReplaceIfPolymorphismDesignPattern;
 using RepositoryDesignPattern;
 using SingletonDesignPattern;
@@ -212,12 +213,26 @@ namespace ConsoleApp
 
             #region Replace IF with Polyphormism
 
+            ConsoleColorMethod("Replace IF with Polyphormism");
+
             Console.WriteLine("Enter your skill set for job opening (like JavaScript,c#,Net)");
 
             //string knowledge = Console.ReadLine();
             string knowledge = "javascript";
 
             Console.WriteLine(SimpleFactoryRIP.Create(knowledge.ToLower()));
+            #endregion
+
+            #region Abstract Factory design pattern
+
+            ConsoleColorMethod("Abstract Factory design pattern");
+
+            var investmentPrivateFactory = InvestmentFactory.CreateFactory("Private");
+            string productType = investmentPrivateFactory.GetProduct("ICICI").FD(1000);
+
+            Console.WriteLine(productType);
+
+            Console.WriteLine(InvestmentFactory.CreateFactory("Public").GetProduct("SBI").MF(50000));
             #endregion
 
         }
