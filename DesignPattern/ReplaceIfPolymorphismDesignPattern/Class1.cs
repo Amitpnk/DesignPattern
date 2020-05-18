@@ -22,11 +22,12 @@ namespace ReplaceIfPolymorphismDesignPattern
             return temp;
         }
 
-        public static string Create(string CustType)
+        public static string Create(string skillType)
         {
 
             // Design Pattern : RIP Pattern
-            return skill.Value[CustType];
+            return skill.Value[skillType];
         }
     }
+
 }
