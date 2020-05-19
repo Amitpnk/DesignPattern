@@ -7,11 +7,13 @@
 //using AggregateRootDesignPattern;
 //using IteratorDesignPattern;
 using AbstractFactoryDesignPattern;
+using IOC_DI_Unity;
 using ReplaceIfPolymorphismDesignPattern;
 using RepositoryDesignPattern;
 using SingletonDesignPattern;
 using System;
 using TemplateDesignPattern;
+using Unity;
 
 namespace ConsoleApp
 {
@@ -235,6 +237,18 @@ namespace ConsoleApp
             Console.WriteLine(InvestmentFactory.CreateFactory("Public").GetProduct("SBI").MF(50000));
             #endregion
 
+            #region IOC DI Unity
+
+            ConsoleColorMethod("IOC DI Unity");
+
+            IUnityContainer container = new UnityContainer();
+            container.RegisterType<IRechargeHandler, RechargeJIO>("JIO");
+            container.RegisterType<IRechargeHandler, RechargeVodafone>("Vodafone");
+
+            IRechargeHandler recharge = container.Resolve<IRechargeHandler>("JIO");
+            recharge.DoRecharge();
+
+            #endregion
         }
 
 

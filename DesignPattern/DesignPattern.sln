@@ -31,7 +31,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReplaceIfPolymorphismDesign
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanCode", "CleanCode\CleanCode.csproj", "{29ABFDE5-0125-4A45-A355-48F32262B497}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AbstractFactoryDesignPattern", "AbstractFactory\AbstractFactoryDesignPattern.csproj", "{832727C2-2BBB-448A-8C5C-34C53E656070}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AbstractFactoryDesignPattern", "AbstractFactory\AbstractFactoryDesignPattern.csproj", "{832727C2-2BBB-448A-8C5C-34C53E656070}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IOC_DI_Unity", "IOC_DI_Unity\IOC_DI_Unity.csproj", "{1DF15BC9-524D-4684-9280-BB9658C46F5F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -99,6 +101,10 @@ Global
 		{832727C2-2BBB-448A-8C5C-34C53E656070}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{832727C2-2BBB-448A-8C5C-34C53E656070}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{832727C2-2BBB-448A-8C5C-34C53E656070}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1DF15BC9-524D-4684-9280-BB9658C46F5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1DF15BC9-524D-4684-9280-BB9658C46F5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1DF15BC9-524D-4684-9280-BB9658C46F5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1DF15BC9-524D-4684-9280-BB9658C46F5F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
