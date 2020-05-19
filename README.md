@@ -32,8 +32,8 @@ There some more design pattern which is widely used in real time project
 * UOW
 * CQRS design pattern
 * [Inversion Of Control and Dependency Injection using Unity](IOC-DI)
-* Lazy Loading
-* Fluent interface and method chaining
+* [Lazy Loading](lazy-loading)
+* Method chaining
 
 ## Sending Feedback
 
