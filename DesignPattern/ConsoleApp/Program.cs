@@ -154,32 +154,85 @@ namespace ConsoleApp
             #region Repository Design Pattern
 
 
-            ConsoleColorMethod("Repository design pattern");
+            ConsoleColorMethod("Generic Repository design pattern");
+            
+            // Generic 
+            IGenericRepository<Employee> repository = null;
+            repository = new GenericRepository<Employee>();
 
+            try
+            {
+                var employee = new Employee() { Name = "Amit", Salary = 60000, Gender = "Male", Dept = "IT" };
+                repository.Add(employee);
+                repository.Save();
 
+                repository = new GenericRepository<Employee>();
+                var id = repository.GetById(1);
 
-            // repository design pattern (customer class)
-            //IRepoContext<CustomerRepository> repoContext = new DAL<CustomerRepository>();
-            //repoContext.Add(new CustomerRepository());
-            //repoContext.Save();
+                repository = new GenericRepository<Employee>();
+                var all = repository.GetAll();
 
-            // repository design pattern (supplier class)
-            //IRepoContext<SupplierRepository> repoContext1 = new DAL<SupplierRepository>();
-            //repoContext1.Add(new SupplierRepository());
-            //repoContext1.Save();
+                repository = new GenericRepository<Employee>();
+                var id1 = repository.GetById(1);
 
-            // repository design pattern with template design pattern
-            //IRepoContext<CustomerRepository> repoContext = new DALCustomerRepo();
-            //repoContext.Add(new CustomerRepository());
-            //repoContext.Save();
+                id1.Name = "Amit Naik";
+                repository.Update(id1);
+                repository.Save();
 
-            // repository design pattern with factory and template design pattern
-            IRepoContext<CustomerRepository> repoContext = FactoryRepository<CustomerRepository>.Create();
-            repoContext.Add(new CustomerRepository());
-            repoContext.Save();
-
+                repository = new GenericRepository<Employee>();
+                repository.Delete(1);
+                repository.Save();
+            }
+            catch (Exception ex)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine($"Error :{ex.Message}");
+                Console.ForegroundColor = ConsoleColor.White;
+                
+            }
             #endregion
 
+
+            #region Repository Design Pattern
+
+
+            ConsoleColorMethod("Non Generic Repository design pattern");
+
+            // Generic 
+            EmployeeRepository employeeRepository = null;
+            employeeRepository = new EmployeeRepository();
+
+            try
+            {
+                var employee = new Employee() { Name = "Shweta", Salary = 600000, Gender = "Female", Dept = "IT" };
+                employeeRepository.Add(employee);
+                employeeRepository.Save();
+
+                employeeRepository = new EmployeeRepository();
+                var id = employeeRepository.GetById(1);
+
+                employeeRepository = new EmployeeRepository();
+                var all = employeeRepository.GetAll();
+
+                employeeRepository = new EmployeeRepository();
+                var id1 = employeeRepository.GetById(2);
+
+                id1.Name = "Shweta Naik";
+                employeeRepository.Update(id1);
+                employeeRepository.Save();
+
+                employeeRepository = new EmployeeRepository();
+                employeeRepository.Delete(1);
+                employeeRepository.Save();
+            }
+            catch (Exception ex)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine($"Error :{ex.Message}");
+                Console.ForegroundColor = ConsoleColor.White;
+
+            }
+            #endregion
 
             #region Template design pattern
             ConsoleColorMethod("Template design pattern");
