@@ -28,7 +28,7 @@ Design patterns are documented tried and tested solutions for recurring problems
 #### Other design pattern
 
 There some more design pattern which is widely used in real time project
-* Repository design pattern
+* [Repository design pattern](Repository-design-pattern)
 * UOW
 * CQRS design pattern
 * [Inversion Of Control and Dependency Injection using Unity](IOC-DI)
