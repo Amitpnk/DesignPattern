@@ -8,6 +8,7 @@
 //using IteratorDesignPattern;
 using AbstractFactoryDesignPattern;
 using IOC_DI_Unity;
+using LazyLoading;
 using ReplaceIfPolymorphismDesignPattern;
 using RepositoryDesignPattern;
 using SingletonDesignPattern;
@@ -247,6 +248,20 @@ namespace ConsoleApp
 
             IRechargeHandler recharge = container.Resolve<IRechargeHandler>("JIO");
             recharge.DoRecharge();
+
+            #endregion
+
+            #region Lazy loading
+
+            ConsoleColorMethod("Lazy loading");
+            Console.WriteLine("Enter your skill set for job opening (like JavaScript,c#,Net)");
+
+            string knowledgeLazyLoading = "Javascript";
+
+            Console.WriteLine(LazyLoadingFactory.Create(knowledgeLazyLoading.ToLower()));
+
+            // When we call second time, it doesn't add to temp Dictionary in LazyLoadingFactory class file
+            Console.WriteLine(LazyLoadingFactory.Create(knowledgeLazyLoading.ToLower()));
 
             #endregion
         }

@@ -35,6 +35,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AbstractFactoryDesignPatter
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IOC_DI_Unity", "IOC_DI_Unity\IOC_DI_Unity.csproj", "{1DF15BC9-524D-4684-9280-BB9658C46F5F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LazyLoading", "LazyLoading\LazyLoading.csproj", "{BF468425-9C2D-4B13-9F0F-F259ED78F454}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -105,6 +107,10 @@ Global
 		{1DF15BC9-524D-4684-9280-BB9658C46F5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1DF15BC9-524D-4684-9280-BB9658C46F5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1DF15BC9-524D-4684-9280-BB9658C46F5F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF468425-9C2D-4B13-9F0F-F259ED78F454}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF468425-9C2D-4B13-9F0F-F259ED78F454}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF468425-9C2D-4B13-9F0F-F259ED78F454}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF468425-9C2D-4B13-9F0F-F259ED78F454}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -18,6 +18,7 @@
     <ProjectReference Include="..\FactoryDesignPattern\FactoryDesignPattern.csproj" />
     <ProjectReference Include="..\IOC_DI_Unity\IOC_DI_Unity.csproj" />
     <ProjectReference Include="..\IteratorDesignPattern\IteratorDesignPattern.csproj" />
+    <ProjectReference Include="..\LazyLoading\LazyLoading.csproj" />
     <ProjectReference Include="..\MementoDesignPattern\MementoDesignPattern.csproj" />
     <ProjectReference Include="..\PrototypeDesignPattern\PrototypeDesignPattern.csproj" />
     <ProjectReference Include="..\ReplaceIfPolymorphismDesignPattern\ReplaceIfPolymorphismDesignPattern.csproj" />
