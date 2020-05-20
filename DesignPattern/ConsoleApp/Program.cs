@@ -15,6 +15,7 @@ using SingletonDesignPattern;
 using System;
 using TemplateDesignPattern;
 using Unity;
+using UOWDesignPattern;
 
 namespace ConsoleApp
 {
@@ -151,11 +152,11 @@ namespace ConsoleApp
             //#endregion
 
 
-            #region Repository Design Pattern
+            #region Generic Repository Design Pattern
 
 
             ConsoleColorMethod("Generic Repository design pattern");
-            
+
             // Generic 
             IGenericRepository<Employee> repository = null;
             repository = new GenericRepository<Employee>();
@@ -188,13 +189,11 @@ namespace ConsoleApp
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine($"Error :{ex.Message}");
                 Console.ForegroundColor = ConsoleColor.White;
-                
+
             }
             #endregion
 
-
-            #region Repository Design Pattern
-
+            #region Non Generic Repository Design Pattern
 
             ConsoleColorMethod("Non Generic Repository design pattern");
 
@@ -229,6 +228,56 @@ namespace ConsoleApp
             {
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine($"Error :{ex.Message}");
+                Console.ForegroundColor = ConsoleColor.White;
+
+            }
+            #endregion
+
+            #region UOW design pattern for Generic Repository
+
+            ConsoleColorMethod("UOW design pattern for Generic Repository");
+
+            UOW_Generic<Employee> uowG = new UOW_Generic<Employee>(new EmployeeDBContext());
+
+            try
+            {
+                var employee = new Employee() { Name = "Shweta", Salary = 600000, Gender = "Female", Dept = "IT UOW generic" };
+
+                uowG.employeeRepository.Add(employee);
+                uowG.Complete();
+            }
+            catch (Exception ex)
+            {
+
+                uowG.Dispose();
+
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine($"Error : {ex.Message}");
+                Console.ForegroundColor = ConsoleColor.White;
+
+            }
+            #endregion
+
+            #region UOW design pattern for Non Generic Repository
+
+            ConsoleColorMethod("UOW design pattern for Non Generic Repository");
+
+            UnitOfWork uow = new UnitOfWork(new EmployeeDBContext());
+
+            try
+            {
+                var employee = new Employee() { Name = "Shweta", Salary = 600000, Gender = "Female", Dept = "IT UOW non generic" };
+
+                uow.employeeRepository.Add(employee);
+                uow.Complete();
+            }
+            catch (Exception ex)
+            {
+
+                uow.Dispose();
+
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine($"Error : {ex.Message}");
                 Console.ForegroundColor = ConsoleColor.White;
 
             }

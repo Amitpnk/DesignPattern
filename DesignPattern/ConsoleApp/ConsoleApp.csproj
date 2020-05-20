@@ -29,6 +29,7 @@
     <ProjectReference Include="..\RepositoryDesignPattern\RepositoryDesignPattern.csproj" />
     <ProjectReference Include="..\SingletonDesignPattern\SingletonDesignPattern.csproj" />
     <ProjectReference Include="..\TemplateDesignPattern\TemplateDesignPattern.csproj" />
+    <ProjectReference Include="..\UOWDesignPattern\UOWDesignPattern.csproj" />
   </ItemGroup>
 
 </Project>
