@@ -7,6 +7,8 @@
 //using AggregateRootDesignPattern;
 //using IteratorDesignPattern;
 using AbstractFactoryDesignPattern;
+using BridgeDesignPattern;
+using CompositeDesignPattern;
 using IOC_DI_Unity;
 using LazyLoading;
 using ReplaceIfPolymorphismDesignPattern;
@@ -176,13 +178,24 @@ namespace ConsoleApp
                 repository = new GenericRepository<Employee>();
                 var id1 = repository.GetById(1);
 
-                id1.Name = "Amit Naik";
-                repository.Update(id1);
-                repository.Save();
+                if (id1 != null)
+                {
+                    id1.Name = "Amit Naik";
+                    repository.Update(id1);
+                    repository.Save();
 
-                repository = new GenericRepository<Employee>();
-                repository.Delete(1);
-                repository.Save();
+                    repository = new GenericRepository<Employee>();
+                    repository.Delete(1);
+                    repository.Save();
+                }
+                else
+                {
+
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine($"Error : ID not found");
+                    Console.ForegroundColor = ConsoleColor.White;
+                }
+
             }
             catch (Exception ex)
             {
@@ -216,13 +229,22 @@ namespace ConsoleApp
                 employeeRepository = new EmployeeRepository();
                 var id1 = employeeRepository.GetById(2);
 
-                id1.Name = "Shweta Naik";
-                employeeRepository.Update(id1);
-                employeeRepository.Save();
+                if (id1 != null)
+                {
+                    id1.Name = "Shweta Naik";
+                    employeeRepository.Update(id1);
+                    employeeRepository.Save();
 
-                employeeRepository = new EmployeeRepository();
-                employeeRepository.Delete(1);
-                employeeRepository.Save();
+                    employeeRepository = new EmployeeRepository();
+                    employeeRepository.Delete(1);
+                    employeeRepository.Save();
+                }
+                else
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine($"Error : ID not found");
+                    Console.ForegroundColor = ConsoleColor.White;
+                }
             }
             catch (Exception ex)
             {
@@ -365,6 +387,42 @@ namespace ConsoleApp
             // When we call second time, it doesn't add to temp Dictionary in LazyLoadingFactory class file
             Console.WriteLine(LazyLoadingFactory.Create(knowledgeLazyLoading.ToLower()));
 
+            #endregion
+
+
+
+            #region Bridge design pattern
+
+            ConsoleColorMethod("Bridge design pattern");
+            Payment order = new CardPayment();
+            order.IPaymentSystem = new CitiPaymentSystem();
+            order.MakePayment();
+
+            order.IPaymentSystem = new ICICIPaymentSystem();
+            order.MakePayment();
+
+            order = new NetBankingPayment();
+            order.IPaymentSystem = new CitiPaymentSystem();
+            order.MakePayment();
+            #endregion
+
+
+            #region Composite design pattern
+            ConsoleColorMethod("Composite design pattern");
+            IEmployeeCDP John = new EmployeeCDP("John", "IT");
+            IEmployeeCDP Mike = new EmployeeCDP("Mike", "IT");
+            IEmployeeCDP Jason = new EmployeeCDP("Jason", "HR");
+            IEmployeeCDP Eric = new EmployeeCDP("Eric", "HR");
+            IEmployeeCDP Henry = new EmployeeCDP("Henry", "HR");
+
+            IEmployeeCDP James = new ManagerCDP("James", "IT")
+            { SubOrdinates = { John, Mike } };
+            IEmployeeCDP Philip = new ManagerCDP("Philip", "HR")
+            { SubOrdinates = { Jason, Eric, Henry } };
+
+            IEmployeeCDP Bob = new ManagerCDP("Bob", "Head")
+            { SubOrdinates = { James, Philip } };
+            James.GetDetails(1);
             #endregion
         }
 

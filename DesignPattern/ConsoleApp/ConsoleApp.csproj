@@ -17,7 +17,9 @@
     <ProjectReference Include="..\AbstractFactory\AbstractFactoryDesignPattern.csproj" />
     <ProjectReference Include="..\AdapterDesignPattern\AdapterDesignPattern.csproj" />
     <ProjectReference Include="..\AggregateRootDesignPattern\AggregateRootDesignPattern.csproj" />
+    <ProjectReference Include="..\BridgeDesignPattern\BridgeDesignPattern.csproj" />
     <ProjectReference Include="..\BuilderDesignPattern\BuilderDesignPattern.csproj" />
+    <ProjectReference Include="..\CompositeDesignPattern\CompositeDesignPattern.csproj" />
     <ProjectReference Include="..\DecoratorDesignPattern\DecoratorDesignPattern.csproj" />
     <ProjectReference Include="..\FactoryDesignPattern\FactoryDesignPattern.csproj" />
     <ProjectReference Include="..\IOC_DI_Unity\IOC_DI_Unity.csproj" />
