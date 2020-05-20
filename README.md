@@ -14,10 +14,10 @@ Design patterns are documented tried and tested solutions for recurring problems
 | Creational  | Strucural  | Behavioral | 
 | ------------- | ------------- | ------------- |
 | [Abstract Factory](Abstract-Factory)  | [Adapter](Adapter)  | Chain of Resposibility | 
-| [Builder](Builder) | Bridge  | Command |
-| [Factory](Factory) | Composite  | Interpreter |
+| [Builder](Builder) | [Bridge](Bridge)  | Command |
+| [Factory](Factory) | [Composite](Composite)  | Interpreter |
 | [Prototype](Prototype) | [Decorator](Decorator)  | [Iterator](Iterator) |
-| [Singleton](Singleton) | Facade  | [Mediator](Mediator) |
+| [Singleton](Singleton) | [Facade](Facade)  | [Mediator](Mediator) |
 | - | Flyweight  | [Memento](Memento) |
 | - | Proxy  | Observer |
 | - | -  | State |
