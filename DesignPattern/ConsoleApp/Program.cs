@@ -9,6 +9,7 @@
 using AbstractFactoryDesignPattern;
 using BridgeDesignPattern;
 using CompositeDesignPattern;
+using FacadeDesignPattern;
 using IOC_DI_Unity;
 using LazyLoading;
 using ReplaceIfPolymorphismDesignPattern;
@@ -424,6 +425,15 @@ namespace ConsoleApp
             { SubOrdinates = { James, Philip } };
             James.GetDetails(1);
             #endregion
+
+
+            #region Facade design pattern
+            ConsoleColorMethod("Facade design pattern");
+
+            AadharFacade aadharFacade = new AadharFacade();
+            aadharFacade.CreateAadhar();
+            #endregion
+
         }
 
 

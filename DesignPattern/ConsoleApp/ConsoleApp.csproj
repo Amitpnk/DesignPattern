@@ -21,6 +21,7 @@
     <ProjectReference Include="..\BuilderDesignPattern\BuilderDesignPattern.csproj" />
     <ProjectReference Include="..\CompositeDesignPattern\CompositeDesignPattern.csproj" />
     <ProjectReference Include="..\DecoratorDesignPattern\DecoratorDesignPattern.csproj" />
+    <ProjectReference Include="..\FacadeDesignPattern\FacadeDesignPattern.csproj" />
     <ProjectReference Include="..\FactoryDesignPattern\FactoryDesignPattern.csproj" />
     <ProjectReference Include="..\IOC_DI_Unity\IOC_DI_Unity.csproj" />
     <ProjectReference Include="..\IteratorDesignPattern\IteratorDesignPattern.csproj" />
