@@ -13,6 +13,7 @@ using CompositeDesignPattern;
 using FacadeDesignPattern;
 using IOC_DI_Unity;
 using LazyLoading;
+using ObserverDesignPattern;
 using ProxyDesignPattern;
 using ReplaceIfPolymorphismDesignPattern;
 using RepositoryDesignPattern;
@@ -487,6 +488,25 @@ namespace ConsoleApp
             Image2.DisplayImage(); // loading unnecessary
 
             #endregion
+
+            #region Strategy design pattern
+            ConsoleColorMethod("Strategy design pattern");
+
+            //Create a Product with Out Of Stock Status
+            Subject IPhone= new Subject("IPhone Mobile", 10000, "Out Of Stock");
+            //User Anurag will be created and user1 object will be registered to the subject
+            Observer user1 = new Observer("Amit", IPhone);
+            //User Pranaya will be created and user1 object will be registered to the subject
+            Observer user2 = new Observer("Shweta", IPhone);
+            //User Priyanka will be created and user3 object will be registered to the subject
+            Observer user3 = new Observer("Krishna", IPhone);
+
+            Console.WriteLine("IPhone Mobile current state : " + IPhone.getAvailability());
+            Console.WriteLine();
+            // Now product is available
+            IPhone.setAvailability("Available");
+            #endregion
+
         }
 
 
