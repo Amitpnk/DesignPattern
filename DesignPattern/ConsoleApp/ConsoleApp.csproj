@@ -19,6 +19,7 @@
     <ProjectReference Include="..\AggregateRootDesignPattern\AggregateRootDesignPattern.csproj" />
     <ProjectReference Include="..\BridgeDesignPattern\BridgeDesignPattern.csproj" />
     <ProjectReference Include="..\BuilderDesignPattern\BuilderDesignPattern.csproj" />
+    <ProjectReference Include="..\ChainOfResponsibilityDesignPattern\ChainOfResponsibilityDesignPattern.csproj" />
     <ProjectReference Include="..\CompositeDesignPattern\CompositeDesignPattern.csproj" />
     <ProjectReference Include="..\DecoratorDesignPattern\DecoratorDesignPattern.csproj" />
     <ProjectReference Include="..\FacadeDesignPattern\FacadeDesignPattern.csproj" />
@@ -31,6 +32,7 @@
     <ProjectReference Include="..\ReplaceIfPolymorphismDesignPattern\ReplaceIfPolymorphismDesignPattern.csproj" />
     <ProjectReference Include="..\RepositoryDesignPattern\RepositoryDesignPattern.csproj" />
     <ProjectReference Include="..\SingletonDesignPattern\SingletonDesignPattern.csproj" />
+    <ProjectReference Include="..\StrategyDesignPattern\StrategyDesignPattern.csproj" />
     <ProjectReference Include="..\TemplateDesignPattern\TemplateDesignPattern.csproj" />
     <ProjectReference Include="..\UOWDesignPattern\UOWDesignPattern.csproj" />
   </ItemGroup>

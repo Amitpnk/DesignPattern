@@ -8,6 +8,7 @@
 //using IteratorDesignPattern;
 using AbstractFactoryDesignPattern;
 using BridgeDesignPattern;
+using ChainOfResponsibilityDesignPattern;
 using CompositeDesignPattern;
 using FacadeDesignPattern;
 using IOC_DI_Unity;
@@ -15,6 +16,7 @@ using LazyLoading;
 using ReplaceIfPolymorphismDesignPattern;
 using RepositoryDesignPattern;
 using SingletonDesignPattern;
+using StrategyDesignPattern;
 using System;
 using TemplateDesignPattern;
 using Unity;
@@ -434,6 +436,36 @@ namespace ConsoleApp
             aadharFacade.CreateAadhar();
             #endregion
 
+            #region Chain of Responsibility design pattern
+            ConsoleColorMethod("Chain of Responsibility design pattern");
+            NewVehicle selection = new SelectVehicle();
+            NewVehicle payment = new MakePayment();
+            NewVehicle serviceBook = new GenerateServiceBook();
+            NewVehicle insurance = new Insurance();
+            NewVehicle delivery = new Delivery();
+
+            selection.SetProcess(payment);
+            payment.SetProcess(serviceBook);
+            serviceBook.SetProcess(insurance);
+            insurance.SetProcess(delivery);
+
+            selection.Proceed("Bajaj Pulsar");
+            #endregion
+
+
+            #region Strategy design pattern
+            ConsoleColorMethod("Strategy design pattern");
+            HashingContext context;
+
+            context = new HashingContext(new MD5Hash());
+            string strSHA1 = context.HashPassword("Akshay Patel");
+            Console.WriteLine("Akshay Patel - " + strSHA1);
+
+            context = new HashingContext(new SHA384Hash());
+            string StrSHA384 = context.HashPassword("Panth Patel");
+            Console.WriteLine("Panth Patel - " + StrSHA384);
+
+            #endregion
         }
 
 
