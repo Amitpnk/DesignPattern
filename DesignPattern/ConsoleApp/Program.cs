@@ -13,6 +13,7 @@ using CompositeDesignPattern;
 using FacadeDesignPattern;
 using IOC_DI_Unity;
 using LazyLoading;
+using ProxyDesignPattern;
 using ReplaceIfPolymorphismDesignPattern;
 using RepositoryDesignPattern;
 using SingletonDesignPattern;
@@ -458,12 +459,32 @@ namespace ConsoleApp
             HashingContext context;
 
             context = new HashingContext(new MD5Hash());
-            string strSHA1 = context.HashPassword("Akshay Patel");
-            Console.WriteLine("Akshay Patel - " + strSHA1);
+            string strSHA1 = context.HashPassword("Amit Naik");
+            Console.WriteLine("Amit Naik - " + strSHA1);
 
             context = new HashingContext(new SHA384Hash());
-            string StrSHA384 = context.HashPassword("Panth Patel");
-            Console.WriteLine("Panth Patel - " + StrSHA384);
+            string StrSHA384 = context.HashPassword("Shwetha Naik");
+            Console.WriteLine("Shwetha Naik - " + StrSHA384);
+
+            #endregion
+
+
+            #region Strategy design pattern
+            ConsoleColorMethod("Strategy design pattern");
+            IImage Image1 = new ProxyImage("Tiger Image");
+
+            Console.WriteLine("Image1 calling DisplayImage first time :");
+            Image1.DisplayImage(); // loading necessary
+            Console.WriteLine("Image1 calling DisplayImage second time :");
+            Image1.DisplayImage(); // loading unnecessary
+            Console.WriteLine("Image1 calling DisplayImage third time :");
+            Image1.DisplayImage(); // loading unnecessary
+            Console.WriteLine();
+            IImage Image2 = new ProxyImage("Lion Image");
+            Console.WriteLine("Image2 calling DisplayImage first time :");
+            Image2.DisplayImage(); // loading necessary
+            Console.WriteLine("Image2 calling DisplayImage second time :");
+            Image2.DisplayImage(); // loading unnecessary
 
             #endregion
         }

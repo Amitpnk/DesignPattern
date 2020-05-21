@@ -29,6 +29,7 @@
     <ProjectReference Include="..\LazyLoading\LazyLoading.csproj" />
     <ProjectReference Include="..\MementoDesignPattern\MementoDesignPattern.csproj" />
     <ProjectReference Include="..\PrototypeDesignPattern\PrototypeDesignPattern.csproj" />
+    <ProjectReference Include="..\ProxyDesignPattern\ProxyDesignPattern.csproj" />
     <ProjectReference Include="..\ReplaceIfPolymorphismDesignPattern\ReplaceIfPolymorphismDesignPattern.csproj" />
     <ProjectReference Include="..\RepositoryDesignPattern\RepositoryDesignPattern.csproj" />
     <ProjectReference Include="..\SingletonDesignPattern\SingletonDesignPattern.csproj" />
