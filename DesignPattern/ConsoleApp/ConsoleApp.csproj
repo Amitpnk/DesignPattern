@@ -34,6 +34,7 @@
     <ProjectReference Include="..\ReplaceIfPolymorphismDesignPattern\ReplaceIfPolymorphismDesignPattern.csproj" />
     <ProjectReference Include="..\RepositoryDesignPattern\RepositoryDesignPattern.csproj" />
     <ProjectReference Include="..\SingletonDesignPattern\SingletonDesignPattern.csproj" />
+    <ProjectReference Include="..\StateDesignPattern\StateDesignPattern.csproj" />
     <ProjectReference Include="..\StrategyDesignPattern\StrategyDesignPattern.csproj" />
     <ProjectReference Include="..\TemplateDesignPattern\TemplateDesignPattern.csproj" />
     <ProjectReference Include="..\UOWDesignPattern\UOWDesignPattern.csproj" />
