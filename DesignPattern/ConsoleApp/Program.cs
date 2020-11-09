@@ -10,9 +10,11 @@ using AbstractFactoryDesignPattern;
 using BridgeDesignPattern;
 using ChainOfResponsibilityDesignPattern;
 using CompositeDesignPattern;
+using DecoratorDesignPattern;
 using FacadeDesignPattern;
 using IOC_DI_Unity;
 using LazyLoading;
+using Microsoft.Extensions.Caching.Memory;
 using ObserverDesignPattern;
 using ProxyDesignPattern;
 using ReplaceIfPolymorphismDesignPattern;
@@ -71,16 +73,29 @@ namespace ConsoleApp
 
             //#endregion
 
-            //#region Decorator design pattern
-            ////Component component = new ConcreteDecoratorA(new ConcreteDecoratorB(new ConcreteComponent()));
-            ////component.Operation();
+            #region Decorator design pattern
+            IMemoryCache _memoryCache = new MemoryCache(new MemoryCacheOptions()); 
+            IWeatherService innerService = new WeatherService();
+            IWeatherService withCachingDecorator = new WeatherServiceCachingDecorator(innerService, _memoryCache);
+            IWeatherService withLoggingDecorator = new WeatherServiceLoggingDecorator(withCachingDecorator);
 
-            //IWedding wedding = new Jewellery(new Orchestra((new TraditionalWedding())));
-            //Console.WriteLine(wedding.Title());
-            //Console.WriteLine("Budget:" + wedding.Budget());
-            //Console.ReadLine();
+            // with no cache - first time
+            Console.WriteLine(withCachingDecorator.GetCurrentWeather("Bangalore"));
+            // with cache - second time
+            Console.WriteLine(withCachingDecorator.GetCurrentWeather("Bangalore"));
 
-            //#endregion
+
+            // with no cache - first time
+            Console.WriteLine(withLoggingDecorator.GetCurrentWeather("Bangalore"));
+            // with cache - second time
+            Console.WriteLine(withLoggingDecorator.GetCurrentWeather("Bangalore"));
+
+
+            Console.ReadLine();
+
+
+
+            #endregion
 
             //#region Prototype Design Pattern
 
@@ -494,7 +509,7 @@ namespace ConsoleApp
             ConsoleColorMethod("Strategy design pattern");
 
             //Create a Product with Out Of Stock Status
-            Subject IPhone= new Subject("IPhone Mobile", 10000, "Out Of Stock");
+            Subject IPhone = new Subject("IPhone Mobile", 10000, "Out Of Stock");
             //User Anurag will be created and user1 object will be registered to the subject
             Observer user1 = new Observer("Amit", IPhone);
             //User Pranaya will be created and user1 object will be registered to the subject

@@ -1,89 +1,91 @@
-﻿using System;
+﻿using Microsoft.Extensions.Caching.Memory;
+using System;
 
 namespace DecoratorDesignPattern
 {
-
-    public interface IWedding
+    public interface IWeatherService
     {
-        string Title();
-        double Budget();
+        string GetCurrentWeather(String location);
+        string GetForecast(String location);
     }
 
-    public class TraditionalWedding : IWedding
+
+    public class WeatherService : IWeatherService
     {
-        public double Budget()
+        public string GetCurrentWeather(string location)
         {
-            return 100000;
+            return "24 degree";
         }
 
-        public string Title()
+        public string GetForecast(string location)
         {
-            return " Traditional Weeding";
-        }
-    }
-
-    public class DestinationWedding : IWedding
-    {
-        public double Budget()
-        {
-            return 700000;
-        }
-
-        public string Title()
-        {
-            return " Destination Weeding";
+            return "partly cloudy";
         }
     }
 
-    public class WeddingDecorator : IWedding
+    public class WeatherServiceCachingDecorator : IWeatherService
     {
-        IWedding wedding;
-
-        protected string title = "undefined title";
-        protected double budget = 0.0;
-        public WeddingDecorator(IWedding wedding)
+        private readonly IMemoryCache _cache;
+        private readonly IWeatherService _innerWeatehrService;
+        public WeatherServiceCachingDecorator(IWeatherService weatherService, IMemoryCache cache)
         {
-            this.wedding = wedding;
-        }
-        public double Budget()
-        {
-            return wedding.Budget() + budget;
+            _innerWeatehrService = weatherService;
+            _cache = cache;
         }
 
-        public string Title()
+        public string GetCurrentWeather(string location)
         {
-            return string.Format("{0} with {1}", wedding.Title(), title);
+            string cacheKey = $"WeatherConditions::{location}";
+            if (_cache.TryGetValue<string>(cacheKey, out var currentWeather))
+            {
+                return currentWeather;
+            }
+            else
+            {
+                var currentConditions = _innerWeatehrService.GetCurrentWeather(location);
+                _cache.Set<string>(cacheKey, currentConditions, TimeSpan.FromMinutes(30));
+                return currentConditions;
+            }
         }
+
+        public string GetForecast(string location)
+        {
+            string cacheKey = $"WeatherForecast::{location}";
+            if (_cache.TryGetValue<string>(cacheKey, out var forecast))
+            {
+                return forecast;
+            }
+            else
+            {
+                var locationForecast = _innerWeatehrService.GetForecast(location);
+                _cache.Set<string>(cacheKey, locationForecast, TimeSpan.FromMinutes(30));
+                return locationForecast;
+            }
+        }
+
     }
 
-    public class Jewellery : WeddingDecorator
+
+    public class WeatherServiceLoggingDecorator : IWeatherService
     {
-        public Jewellery(IWedding wedding)
-            : base(wedding)
+        private readonly IWeatherService _innerWeatherService;
+        public WeatherServiceLoggingDecorator(IWeatherService weatherService)
         {
-            title = "Jewellery";
-            budget = 500000;
+            _innerWeatherService = weatherService;
+        }
+
+        public string GetCurrentWeather(string location)
+        {
+            var currentConditions = _innerWeatherService.GetCurrentWeather(location);
+            Console.WriteLine("GetCurrentWeather logging");
+            return currentConditions;
+        }
+
+        public string GetForecast(string location)
+        {
+            var locationForecast = _innerWeatherService.GetForecast(location);
+            Console.WriteLine("GetForecast logging");
+            return locationForecast;
         }
     }
-
-    public class Orchestra : WeddingDecorator
-    {
-        public Orchestra(IWedding wedding)
-            : base(wedding)
-        {
-            title = "Orchestra";
-            budget = 200000;
-        }
-    }
-
-    public class Theme : WeddingDecorator
-    {
-        public Theme(IWedding wedding)
-            : base(wedding)
-        {
-            title = "Theme";
-            budget = 100000;
-        }
-    }
-
 }
