@@ -8,32 +8,19 @@ Design patterns are documented tried and tested solutions for recurring problems
 
 ## Which are the three main categories of design patterns?
 
-#### According to GOF design pattern
-
- 
-| Creational  | Strucural  | Behavioral | 
-| ------------- | ------------- | ------------- |
-| [Abstract Factory](Abstract-Factory)  | [Adapter](Adapter)  | Chain of Resposibility | 
-| [Builder](Builder) | [Bridge](Bridge)  | Command |
-| [Factory](Factory) | [Composite](Composite)  | Interpreter |
-| [Prototype](Prototype) | [Decorator](Decorator)  | [Iterator](Iterator) |
-| [Singleton](Singleton) | [Facade](Facade)  | [Mediator](Mediator) |
+| Creational  | Strucural  | Behavioral |  Other design pattern |
+| --- | --- | --- | --- |
+| [Abstract Factory](Abstract-Factory)  | [Adapter](Adapter)  |  Chain of Resposibility | [Repository design pattern](Repository-design-pattern) |
+| [Builder](Builder) | [Bridge](Bridge)  | Command | UOW |
+| [Factory](Factory) | [Composite](Composite)  | Interpreter | CQRS |
+| [Prototype](Prototype) | [Decorator](Decorator)  | [Iterator](Iterator) | [Inversion Of Control and Dependency Injection](IOC-DI) |
+| [Singleton](Singleton) | [Facade](Facade)  | [Mediator](Mediator) | [Lazy Loading](lazy-loading) |
 | - | Flyweight  | [Memento](Memento) |
 | - | Proxy  | Observer |
 | - | -  | State |
 | - | -  | Strategy |
 | - | -  | [Template method](Templatemethod) |
 | - | -  | Visitor |
-
-#### Other design pattern
-
-There some more design pattern which is widely used in real time project
-* [Repository design pattern](Repository-design-pattern)
-* UOW
-* CQRS design pattern
-* [Inversion Of Control and Dependency Injection using Unity](IOC-DI)
-* [Lazy Loading](lazy-loading)
-* Method chaining
 
 ## Sending Feedback
 
