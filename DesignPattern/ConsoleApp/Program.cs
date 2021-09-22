@@ -456,18 +456,29 @@ namespace ConsoleApp
 
             #region Chain of Responsibility design pattern
             ConsoleColorMethod("Chain of Responsibility design pattern");
-            NewVehicle selection = new SelectVehicle();
-            NewVehicle payment = new MakePayment();
-            NewVehicle serviceBook = new GenerateServiceBook();
-            NewVehicle insurance = new Insurance();
-            NewVehicle delivery = new Delivery();
 
-            selection.SetProcess(payment);
-            payment.SetProcess(serviceBook);
-            serviceBook.SetProcess(insurance);
-            insurance.SetProcess(delivery);
+            var m1 = new Method1();
+            var m2 = new Method2();
+            var m3 = new Method3();
+            m1.SetNext(m2);
+            m2.SetNext(m3);
 
-            selection.Proceed("Bajaj Pulsar");
+            m1.Process();
+
+            //NewVehicle selection = new SelectVehicle();
+            //NewVehicle payment = new MakePayment();
+            //NewVehicle serviceBook = new GenerateServiceBook();
+            //NewVehicle insurance = new Insurance();
+            //NewVehicle delivery = new Delivery();
+
+            //selection.SetProcess(payment);
+            //payment.SetProcess(serviceBook);
+            //serviceBook.SetProcess(insurance);
+            //insurance.SetProcess(delivery);
+
+            //selection.Proceed("Bajaj Pulsar");
+
+
             #endregion
 
 
