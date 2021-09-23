@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace ChainOfResponsibilityDesignPattern
 {
-    public interface ICheck
+    public interface IHandler
     {
-        void Process();
-        void SetNext(ICheck check);
-        int ExcuteQuery();
+        void Handle();
+        IHandler SetNext(IHandler handler);
+        int ExecuteQuery();
     }
 }

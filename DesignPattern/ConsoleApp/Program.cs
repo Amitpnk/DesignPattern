@@ -74,7 +74,7 @@ namespace ConsoleApp
             //#endregion
 
             #region Decorator design pattern
-            IMemoryCache _memoryCache = new MemoryCache(new MemoryCacheOptions()); 
+            IMemoryCache _memoryCache = new MemoryCache(new MemoryCacheOptions());
             IWeatherService innerService = new WeatherService();
             IWeatherService withCachingDecorator = new WeatherServiceCachingDecorator(innerService, _memoryCache);
             IWeatherService withLoggingDecorator = new WeatherServiceLoggingDecorator(withCachingDecorator);
@@ -97,7 +97,7 @@ namespace ConsoleApp
 
             #endregion
 
-            //#region Prototype Design Pattern
+            #region Prototype Design Pattern
 
             //Employee emp1 = new Employee();
             //emp1.Name = "Amit Naik";
@@ -111,10 +111,10 @@ namespace ConsoleApp
             //Console.WriteLine("Name: " + emp2.Name + ", Department: " + emp2.Department);
 
 
-            //#endregion
+            #endregion
 
 
-            //#region Memento Design Pattern
+            #region Memento Design Pattern
 
             //Employee emp1 = new Employee();
             //emp1.Name = "Amit Naik";
@@ -133,20 +133,20 @@ namespace ConsoleApp
             //Console.WriteLine("Reverting ");
             //Console.WriteLine("Name: " + emp3.Name + ", Department: " + emp3.Department);
 
-            //#endregion
+            #endregion
 
 
-            //#region Aggregate root design pattern
+            #region Aggregate root design pattern
 
             //Customer customer = new Customer();
 
             //customer.Add(new Address { Type = 1 });
             //customer.Add(new Address { Type = 1 });
 
-            //#endregion
+            #endregion
 
 
-            //#region Iterator design pattern
+            #region Iterator design pattern
 
             //Customer customer = new Customer();
 
@@ -172,7 +172,7 @@ namespace ConsoleApp
             ////var x = customer.GetEnumerator();
 
 
-            //#endregion
+            #endregion
 
 
             #region Generic Repository Design Pattern
@@ -458,12 +458,12 @@ namespace ConsoleApp
             ConsoleColorMethod("Chain of Responsibility design pattern");
 
             var m1 = new Method1();
-            var m2 = new Method2();
-            var m3 = new Method3();
-            m1.SetNext(m2);
-            m2.SetNext(m3);
+            m1.SetNext(new Method2()).SetNext(new Method3());
 
-            m1.Process();
+            m1.Handle();
+
+
+
 
             //NewVehicle selection = new SelectVehicle();
             //NewVehicle payment = new MakePayment();

@@ -2,20 +2,20 @@
 
 namespace ChainOfResponsibilityDesignPattern
 {
-    public class Method3 : ICheck
+    public class Method3 : IHandler
     {
-        private ICheck _check;
+        private IHandler _next;
 
         public bool HasValue { get; set; }
 
-        public int ExcuteQuery()
+        public int ExecuteQuery()
         {
-            return 1;
+            return 0;
         }
 
-        public void Process()
+        public void Handle()
         {
-            if (ExcuteQuery() > 0)
+            if (ExecuteQuery() > 0)
             {
                 Console.WriteLine("Method 3");
             }
@@ -26,9 +26,10 @@ namespace ChainOfResponsibilityDesignPattern
             }
         }
 
-        public void SetNext(ICheck check)
+        public IHandler SetNext(IHandler handler)
         {
-            _check = check;
+            _next = handler;
+            return _next;
         }
     }
 }

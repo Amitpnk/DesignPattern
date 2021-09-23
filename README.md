@@ -10,15 +10,15 @@ Design patterns are documented tried and tested solutions for recurring problems
 
 | Creational  | Strucural  | Behavioral |  Other design pattern |
 | --- | --- | --- | --- |
-| [Abstract Factory](#abstract-factory)  | [Adapter](#adapter)  |  Chain of Resposibility | [Repository design pattern](Repository-design-pattern) |
+| [Abstract Factory](#abstract-factory)  | [Adapter](#adapter)  |  [Chain of Resposibility](#ChainofResposibility) | [Repository design pattern](Repository-design-pattern) |
 | [Builder](Builder) | [Bridge](Bridge)  | Command | UOW |
 | [Factory](#factory-pattern) | [Composite](Composite)  | Interpreter | CQRS |
 | [Prototype](Prototype) | [Decorator](Decorator)  | [Iterator](Iterator) | [Inversion Of Control and Dependency Injection](IOC-DI) |
 | [Singleton](#singleton) | [Facade](Facade)  | [Mediator](Mediator) | [Lazy Loading](lazy-loading) |
 | - | Flyweight  | [Memento](Memento) |
-| - | Proxy  | Observer |
-| - | -  | State |
-| - | -  | Strategy |
+| - | [Proxy](#Proxy)  | [Observer](#Observer) |
+| - | -  | [State](#State) |
+| - | -  | [Strategy](#Strategy) |
 | - | -  | [Template method](Templatemethod) |
 | - | -  | Visitor |
 
